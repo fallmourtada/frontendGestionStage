@@ -1,0 +1,63 @@
+<div class="container">
+    <mat-card class="postulation-form">
+        <mat-card-header>
+            <mat-card-title>Add Stage</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <form [formGroup]="stageForm" (ngSubmit)="saveStage()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Titre</mat-label>
+                    <input type="text" class="form-label" formControlName="titre" matInput class="form-label">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Description</mat-label>
+                    <input type="text" class="form-label" formControlName="description" matInput class="form-label">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Date De Fin</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dateFin">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Date De Debut</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dateDebut">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Entreprise</mat-label>
+                    <mat-select formControlName="entreprise">
+                      <mat-option *ngFor="let entreprise of entreprises" [value]="entreprise.id">
+                        {{ entreprise.nom }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> 
+
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">Save Stage</button>
+                </mat-card-actions>
+
+
+                
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+
+
+                  
+
+
+ 
+
+
+
+

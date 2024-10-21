@@ -1,0 +1,50 @@
+<div class="container">
+    <mat-card class="postulation-form">
+        <mat-card-header>
+            <mat-card-title>Add Universite</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <form [formGroup]="universiteForm" (ngSubmit)="saveUniversite()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom</mat-label>
+                    <input type="text" class="form-label" formControlName="name" matInput class="form-label">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Adresse</mat-label>
+                    <input type="text" class="form-label" formControlName="addresse" matInput class="form-label">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="text" class="form-label" formControlName="email" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Telephone</mat-label>
+                    <input type="text" class="form-label" formControlName="telephone" matInput>
+                </mat-form-field>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">Save Universite</button>
+                </mat-card-actions>
+
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Niveau</mat-label>
+                    <mat-select formControlName="niveau">
+                      <mat-option *ngFor="let niveau of niveaux" [value]="niveau">
+                        {{ niveau }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> -->
+                  
+
+
+                
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+

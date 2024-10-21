@@ -1,0 +1,70 @@
+<div class="container">
+    <mat-card class="postulation-form">
+        <mat-card-header>
+            <mat-card-title>Add Tuteur</mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <form [formGroup]="etudiantForm" (ngSubmit)="saveEtudiant()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nom</mat-label>
+                    <input type="text" class="form-label" formControlName="nom" matInput class="form-label">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Prenom</mat-label>
+                    <input type="text" class="form-label" formControlName="prenom" matInput class="form-label">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="text" class="form-label" formControlName="email" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Code Permanent</mat-label>
+                    <input type="text" class="form-label" formControlName="codePermanent" matInput>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Niveau</mat-label>
+                    <mat-select formControlName="niveau">
+                      <mat-option *ngFor="let niveau of niveaux" [value]="niveau">
+                        {{ niveau }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Universite</mat-label>
+                    <mat-select formControlName="universiteId">
+                      <mat-option *ngFor="let universite of universites" [value]="universite.id">
+                        {{ universite.name }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">Save Etudiant</button>
+                </mat-card-actions>
+
+                <!-- <mat-form-field appearance="outline">
+                    <mat-label>Niveau</mat-label>
+                    <mat-select formControlName="niveau">
+                      <mat-option *ngFor="let niveau of niveaux" [value]="niveau">
+                        {{ niveau }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> -->
+                  
+
+
+                
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+
+
+

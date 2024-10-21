@@ -1,0 +1,9 @@
+mat-form-field{
+    display: block;
+}
+
+.postulation-form{
+    display: flex;
+    width: 400px;
+    margin: auto;
+}

@@ -1,0 +1,94 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button (click)="MyDrawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span style="flex:auto"></span>
+    <!-- Home button with apartment icon -->
+    <button mat-button routerLink="/home">
+        <mat-icon>apartment</mat-icon> Home
+    </button>
+    <!-- Profile button with work_outline icon -->
+    <button mat-button routerLink="/profile">
+        <mat-icon>work_outline</mat-icon> Profile
+    </button>
+    <!-- Import button with dropdown menu -->
+    <button mat-button [matMenuTriggerFor]="importMenu">
+        <mat-icon iconPosition="end">keyboard_arrow_down</mat-icon>
+        Import
+    </button>
+    <mat-menu #importMenu>
+        <!-- Icons for importing data -->
+        <button mat-menu-item routerLink="/load-payments">
+            <mat-icon>upload_file</mat-icon> Load Payments
+        </button>
+        <button mat-menu-item routerLink="/load-students">
+            <mat-icon>file_upload</mat-icon> Load Students
+        </button>
+    </mat-menu>
+    <!-- Logout button -->
+    <button mat-raised-button color="accent" type="submit">
+        <mat-icon>exit_to_app</mat-icon> Logout
+    </button>
+</mat-toolbar>
+
+<mat-drawer-container>
+    <mat-drawer opened="true" mode="side" position="start" #MyDrawer>
+        <mat-list>
+            <!-- Dashboard with insights icon -->
+            <mat-list-item>
+                <button mat-button routerLink="/navbar/dashboard">
+                    <mat-icon>insights</mat-icon> Dashboard
+                </button>
+            </mat-list-item>
+            <!-- Student section with school icon -->
+            <mat-list-item>
+                <button mat-button routerLink="/navbar/etudiant">
+                    <mat-icon>school</mat-icon> Étudiant
+                </button>
+            </mat-list-item>
+            <!-- Mentor section with supervisor_account icon -->
+            <mat-list-item>
+                <button mat-button routerLink="/navbar/tuteur">
+                    <mat-icon>supervisor_account</mat-icon> Tuteur
+                </button>
+            </mat-list-item>
+            <!-- Internship (Stage) section with work_outline icon -->
+            <mat-list-item>
+                <button mat-button routerLink="/navbar/stage">
+                    <mat-icon>work_outline</mat-icon> Stage
+                </button>
+            </mat-list-item>
+            <!-- Company section with business icon -->
+            <mat-list-item>
+                <button mat-button routerLink="/navbar/entreprise">
+                    <mat-icon>business</mat-icon> Entreprise
+                </button>
+            </mat-list-item>
+            <!-- University section with account_balance icon -->
+           
+            <mat-list-item>
+                <button mat-button routerLink="/navbar/universite">
+                    <mat-icon>account_balance</mat-icon> Université
+                </button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button routerLink="/navbar/rapport">
+                    <mat-icon>description</mat-icon> Rapport
+                </button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button routerLink="/navbar/valider-postulation">
+                    <mat-icon>description</mat-icon>List Postulation
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <div style="min-height: 1200px">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

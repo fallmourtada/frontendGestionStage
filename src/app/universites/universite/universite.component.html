@@ -1,0 +1,71 @@
+
+    
+<div class="container">
+    <button mat-raised-button color="primary" (click)="goToAddUniversite()">
+        Add New Universite
+    </button>
+    
+    <mat-card>
+     <mat-card-header>
+         <mat-card-title>Universite List</mat-card-title>
+     </mat-card-header>
+     <mat-divider></mat-divider>
+     <mat-card-content>
+        
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let universite"> {{universite.id}} </td>
+              </ng-container>
+            
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name</th>
+              <td mat-cell *matCellDef="let universite"> {{universite.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="addresse">
+                <th mat-header-cell *matHeaderCellDef>Adresse</th>
+                <td mat-cell *matCellDef="let universite"> {{universite.addresse}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="telephone">
+                <th mat-header-cell *matHeaderCellDef>Telephone</th>
+                <td mat-cell *matCellDef="let universite"> {{universite.telephone}} </td>
+              </ng-container>
+          
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef>Email</th>
+              <td mat-cell *matCellDef="let universite"> {{universite.email}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let universite">
+                    <button mat-raised-button color="warn" >
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    &nbsp;
+                    <button mat-raised-button color="primary" >
+                        <mat-icon>update</mat-icon>
+                        Update
+                    </button>
+                </td>
+              </ng-container>
+          
+            
+
+           
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+        <mat-paginator [pageSizeOptions]="[5,10,20,30,100]" >
+
+        </mat-paginator>
+     </mat-card-content>
+    </mat-card>
+ </div>
+ 
+
+

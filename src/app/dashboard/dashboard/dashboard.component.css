@@ -1,0 +1,16 @@
+.dashboard-background {
+    background-image: url('../../../assets/images/dash.jpg'); 
+
+    background-size: cover;
+    background-position: center;
+    /* opacity: 0.1;  */
+    min-height: 100vh;
+    position: relative;
+}
+
+.dashboard-background h1 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #003366;
+}

@@ -1,0 +1,81 @@
+<div class="container">
+    <!-- <mat-toolbar>
+        <button mat-raised-button color="primary" routerLink="/admin/new-customer">
+            New Customer
+        </button>
+    </mat-toolbar> -->
+    <mat-card>
+     <mat-card-header>
+         <mat-card-title>Postulation List</mat-card-title>
+     </mat-card-header>
+     <mat-divider></mat-divider>
+     <mat-card-content>
+        
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID </th>
+                <td mat-cell *matCellDef="let postulation"> {{postulation.id}} </td>
+              </ng-container>
+            
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef>Date</th>
+              <td mat-cell *matCellDef="let postulation"> {{postulation.date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="titre">
+                <th mat-header-cell *matHeaderCellDef>Titre</th>
+                <td mat-cell *matCellDef="let postulation"> {{postulation.stageDTO.titre}} </td>
+              </ng-container>
+          
+            <ng-container matColumnDef="nom">
+              <th mat-header-cell *matHeaderCellDef>Nom Etudiant</th>
+              <td mat-cell *matCellDef="let postulation"> {{postulation.etudiantDTO.nom}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef>Status</th>
+                <td mat-cell *matCellDef="let postulation"> {{postulation.status}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Actions</th>
+                <td mat-cell *matCellDef="let postulation"> 
+                    <button mat-raised-button color="primary" 
+                    (click)="validerPostulation(postulation.id)"
+                    [disabled]="postulationDisabled[postulation.id]">Valider</button>
+                    &nbsp;
+                    <button mat-raised-button color="accent" 
+                    (click)="annulerPostulation(postulation.id)"
+                    [disabled]="postulationDisabled[postulation.id]">Annuler</button>
+                </td>
+            </ng-container>
+
+            <!-- <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let customer">
+                    <button mat-raised-button color="warn" (click)="deleteCustomer(customer.id)" type="button">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    &nbsp;
+                    <button mat-raised-button color="primary" (click)="handleCustomerAccount(customer)">Accounts</button>
+                </td>
+              </ng-container> -->
+          
+            
+
+           
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+        <mat-paginator [pageSizeOptions]="[5,10,20,30,100]" >
+
+        </mat-paginator>
+     </mat-card-content>
+    </mat-card>
+ </div>
+ 
+
+
+
